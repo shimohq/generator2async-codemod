@@ -10,14 +10,15 @@ class Foo {
   * aGeneratorMethod () {
     yield this.pass()
     ;(yield this.pass()).another()
-    this.another = {
+    const another = {
       foo: yield this.pass(),
       * bar () {
         return yield this.pass()
       }
     }
     yield* this.another.pass()
-    return new Foo()
+    yield this.pass() ? this.pass() : this.pass()
+    return this.foo ? yield another.foo() : this.foo()
   }
 
   async foo () {

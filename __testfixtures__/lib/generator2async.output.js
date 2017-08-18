@@ -10,14 +10,15 @@ class Foo {
   async aGeneratorMethod () {
     await this.pass()
     ;(await this.pass()).another()
-    this.another = {
+    const another = {
       foo: await this.pass(),
       async bar () {
         return this.pass()
       }
     }
     await this.another.pass()
-    return new Foo()
+    (this.pass() ? await this.pass() : await this.pass())
+    return (this.foo ? another.foo() : this.foo())
   }
 
   async foo () {
