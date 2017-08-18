@@ -1,6 +1,10 @@
 class Foo {
   nonGenerator () {
     this.pass()
+    if (this.pass()) {
+      return
+    }
+    return 'foo'
   }
 
   * aGeneratorMethod () {
@@ -18,6 +22,10 @@ class Foo {
 
   async foo () {
     await this.pass()
+    if (this.pass()) {
+      return
+    }
+    return 'bar'
   }
 }
 
