@@ -1,0 +1,32 @@
+{
+  "name": "generator2async-codemod",
+  "version": "0.1.0",
+  "description": "Transform generator functions into async functions",
+  "main": "generator2async.js",
+  "scripts": {
+    "test": "standard; jest"
+  },
+  "bin": {
+    "generator2async": "generator2async.js"
+  },
+  "author": {
+    "name": "Lucas Woo",
+    "email": "legendecas@gmail.com",
+    "url": "github.com/legendecas"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "execa": "^0.7.0",
+    "jscodeshift": "^0.3.32",
+    "meow": "^3.7.0",
+    "standard": "^10.0.3"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
+  },
+  "standard": {
+    "ignore": [
+      "__testfixtures__"
+    ]
+  }
+}
