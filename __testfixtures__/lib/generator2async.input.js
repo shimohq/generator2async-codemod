@@ -1,4 +1,8 @@
 class Foo {
+  nonGenerator () {
+    this.pass()
+  }
+
   * aGeneratorMethod () {
     yield this.pass()
     ;(yield this.pass()).another()
@@ -10,6 +14,10 @@ class Foo {
     }
     yield* this.another.pass()
     return new Foo()
+  }
+
+  async foo () {
+    await this.pass()
   }
 }
 
@@ -25,4 +33,12 @@ function * aGeneratorFunction () {
   }
   const _ = yield* this.another.pass()
   return new Foo()
+}
+
+function nonGenerator () {
+  this.pass()
+}
+
+async function foo () {
+  this.pass()
 }

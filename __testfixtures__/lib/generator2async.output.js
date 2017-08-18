@@ -1,4 +1,8 @@
 class Foo {
+  nonGenerator () {
+    this.pass()
+  }
+
   async aGeneratorMethod () {
     await this.pass()
     ;(await this.pass()).another()
@@ -10,6 +14,10 @@ class Foo {
     }
     await this.another.pass()
     return new Foo()
+  }
+
+  async foo () {
+    await this.pass()
   }
 }
 
@@ -25,4 +33,12 @@ async function aGeneratorFunction () {
   }
   const _ = await this.another.pass()
   return new Foo()
+}
+
+function nonGenerator () {
+  this.pass()
+}
+
+async function foo () {
+  this.pass()
 }
