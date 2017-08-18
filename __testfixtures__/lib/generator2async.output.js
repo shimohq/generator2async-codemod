@@ -9,7 +9,7 @@ class Foo {
     this.another = {
       foo: await this.pass(),
       async bar () {
-        return await this.pass()
+        return this.pass()
       }
     }
     await this.another.pass()
@@ -28,7 +28,7 @@ async function aGeneratorFunction () {
     foo: await this.pass(),
     pass: await this.foo(),
     async bar () {
-      return await this.pass()
+      return this.pass()
     }
   }
   const _ = await this.another.pass()
