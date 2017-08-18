@@ -29,8 +29,11 @@ class Foo {
   }
 }
 
+/**
+ * leading comment
+ */
 function * aGeneratorFunction () {
-  yield this.pass()
+  yield this.pass() // inline comment
   ;(yield this.pass()).another()
   this.another = {
     foo: yield this.pass(),
@@ -39,7 +42,8 @@ function * aGeneratorFunction () {
       return yield this.pass()
     }
   }
-  const _ = yield* this.another.pass()
+  const _ = yield* /* comment */ this.another.pass()
+  // comment
   return new Foo()
 }
 

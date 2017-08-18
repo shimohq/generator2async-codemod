@@ -29,8 +29,11 @@ class Foo {
   }
 }
 
+/**
+ * leading comment
+ */
 async function aGeneratorFunction () {
-  await this.pass()
+  await this.pass() // inline comment
   ;(await this.pass()).another()
   this.another = {
     foo: await this.pass(),
@@ -39,7 +42,8 @@ async function aGeneratorFunction () {
       return this.pass()
     }
   }
-  const _ = await this.another.pass()
+  const _ = await /* comment */ this.another.pass()
+  // comment
   return new Foo()
 }
 
