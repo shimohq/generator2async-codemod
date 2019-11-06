@@ -19,5 +19,25 @@ const foo = {
     await 'bar'
   }
 }
+`);
+defineInlineTest(transform, {}, `
+const foo = {
+  * foo () {
+    function call1 () {};
+    function call2 () {};
+    yield [
+      call1(),
+      call2(),
+    ]
+  }
+}
+`, `
+const foo = {
+  async foo () {
+    function call1 () {};
+    function call2 () {};
+    await Promise.all([call1(), call2()])
+  }
+}
 `)
 })
